@@ -3,6 +3,7 @@ import { createNandGate } from "./nand-gate";
 /**
  * @param input1
  * @param input2
+ * @param select
  * @param label
  * @returns output
  *

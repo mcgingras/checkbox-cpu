@@ -2,9 +2,15 @@
 
 No good reason to be doing this.
 
+To run:
+
 ```bash
+npm install
 npm run dev
 ```
 
-Todo:
-Testing?
+To run tests:
+
+```bash
+npm run test
+```

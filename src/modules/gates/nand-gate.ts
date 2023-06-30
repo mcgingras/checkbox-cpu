@@ -42,7 +42,7 @@ export const createNandGate = (
 
   function updateOutput() {
     output.checked = !(input1.checked && input2.checked);
-    var event = new Event("change");
+    let event = new Event("change", { bubbles: true, cancelable: false });
     output.dispatchEvent(event);
   }
 };

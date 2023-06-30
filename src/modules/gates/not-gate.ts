@@ -13,5 +13,5 @@ import { createNandGate } from "./nand-gate";
  * 1 | 0
  */
 export const createNotGate = (input: HTMLInputElement, label?: string) => {
-  createNandGate(input, input, label);
+  return createNandGate(input, input, label);
 };

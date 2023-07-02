@@ -1,4 +1,6 @@
-import { createNandGate } from "./nand-gate";
+import { createNotGate } from "./not-gate";
+import { createAndGate } from "./and-gate";
+import { createOrGate } from "./or-gate";
 
 /**
  * @param input1
@@ -20,8 +22,9 @@ export const createXorGate = (
   input2: HTMLInputElement,
   label?: string
 ) => {
-  const a = createNandGate(input1, input2);
-  const b = createNandGate(input1, a);
-  const c = createNandGate(input1, a);
-  return createNandGate(b, c, label);
+  const na = createNotGate(input1);
+  const nb = createNotGate(input2);
+  const c = createAndGate(na, input2);
+  const d = createAndGate(input1, nb);
+  return createOrGate(c, d, label);
 };

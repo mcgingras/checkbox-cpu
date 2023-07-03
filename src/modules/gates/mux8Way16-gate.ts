@@ -1,31 +1,44 @@
-import { createDMuxGate } from "./dmux-gate";
+import { createMux16Gate } from "./mux16-gate";
 
 /**
- * @param input - input
+ * @param inputs1 - array16 of inputs
+ * @param inputs2 - array16 of inputs
+ * @param inputs3 - array16 of inputs
+ * @param inputs4 - array16 of inputs
+ * @param inputs5 - array16 of inputs
+ * @param inputs6 - array16 of inputs
+ * @param inputs7 - array16 of inputs
+ * @param inputs8 - array16 of inputs
  * @param select  - array3 of inputs
- * @returns output as HTMLInputElement[8]
+ * @returns output as HTMLInputElement[16]
  *
- * 8 way dmux
- * outputs {in, 0, 0, 0, 0, 0, 0, 0} if select === 000
- * outputs {0, in, 0, 0, 0, 0, 0, 0} if select === 001
- * outputs {0, 0, in, 0, 0, 0, 0, 0} if select === 010
- * outputs {0, 0, 0, in, 0, 0, 0, 0} if select === 011
- * outputs {0, 0, 0, 0, in, 0, 0, 0} if select === 100
- * outputs {0, 0, 0, 0, 0, in, 0, 0} if select === 101
- * outputs {0, 0, 0, 0, 0, 0, in, 0} if select === 110
- * outputs {0, 0, 0, 0, 0, 0, 0, in} if select === 111
+ * 8 way mux
+ * outputs i1 if select === 000
+ * outputs i2 if select === 001
+ * outputs i3 if select === 010
+ * outputs i4 if select === 011
+ * outputs i5 if select === 100
+ * outputs i6 if select === 101
+ * outputs i7 if select === 110
+ * outputs i8 if select === 111
  */
-export const createDMux8Way16Gate = (
-  input: HTMLInputElement,
+export const createMux8Way16Gate = (
+  inputs1: HTMLInputElement[],
+  inputs2: HTMLInputElement[],
+  inputs3: HTMLInputElement[],
+  inputs4: HTMLInputElement[],
+  inputs5: HTMLInputElement[],
+  inputs6: HTMLInputElement[],
+  inputs7: HTMLInputElement[],
+  inputs8: HTMLInputElement[],
   select: HTMLInputElement[],
   label?: string
 ) => {
-  const [a0, b0] = createDMuxGate(input, select[2]);
-  const [a00, b00] = createDMuxGate(a0, select[1]);
-  const [c00, d00] = createDMuxGate(b0, select[1]);
-  const [a, b] = createDMuxGate(a00, select[0], label);
-  const [c, d] = createDMuxGate(b00, select[0], label);
-  const [e, f] = createDMuxGate(c00, select[0], label);
-  const [g, h] = createDMuxGate(d00, select[0], label);
-  return [a, b, c, d, e, f, g, h];
+  const q = createMux16Gate(inputs1, inputs2, select[0]);
+  const r = createMux16Gate(inputs3, inputs4, select[0]);
+  const s = createMux16Gate(inputs5, inputs6, select[0]);
+  const t = createMux16Gate(inputs7, inputs8, select[0]);
+  const u = createMux16Gate(q, r, select[1]);
+  const v = createMux16Gate(s, t, select[1]);
+  return createMux16Gate(u, v, select[2], label);
 };

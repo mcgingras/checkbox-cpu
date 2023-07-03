@@ -15,7 +15,7 @@ import { createDMuxGate } from "./dmux-gate";
  * outputs {0, 0, 0, 0, 0, 0, in, 0} if select === 110
  * outputs {0, 0, 0, 0, 0, 0, 0, in} if select === 111
  */
-export const createDMux8Way16Gate = (
+export const createDMux8WayGate = (
   input: HTMLInputElement,
   select: HTMLInputElement[],
   label?: string

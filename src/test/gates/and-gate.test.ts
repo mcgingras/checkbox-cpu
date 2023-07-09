@@ -1,16 +1,16 @@
 import { JSDOM } from "jsdom";
-import { createAndGate } from "../modules/gates/and-gate";
+import { createAndGate } from "../../modules/gates/and-gate";
 import { describe, test, expect } from "vitest";
 import { fireEvent } from "@testing-library/dom";
 
 /**
  * spec:
- * 1 | 2 | out
+ * 1 | 2 | s | c
  * -----------
- * 0 | 0 | 0
- * 0 | 1 | 0
- * 1 | 0 | 0
- * 1 | 1 | 1
+ * 0 | 0 | 0 | 0
+ * 0 | 1 | 1 | 0
+ * 1 | 0 | 1 | 0
+ * 1 | 1 | 1 | 1
  */
 
 describe("And gate", () => {

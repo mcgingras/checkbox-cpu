@@ -21,8 +21,8 @@ export const createAndGate = (
   input2: HTMLInputElement,
   label?: string
 ) => {
-  const a = createNandGate(input1, input2);
-  const b = createNandGate(input1, input2);
+  const a = createNandGate(input1, input2, "nand a,b");
+  const b = createNandGate(input1, input2, "nand a,b");
 
   return createNandGate(a, b, label);
 };

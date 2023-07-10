@@ -1,5 +1,5 @@
 import { JSDOM } from "jsdom";
-import { createOrGate } from "../modules/gates/or-gate";
+import { createOrGate } from "../../modules/gates/or-gate";
 import { describe, test, expect } from "vitest";
 import { fireEvent } from "@testing-library/dom";
 

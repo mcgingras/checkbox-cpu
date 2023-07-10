@@ -29,6 +29,6 @@ export const createFullAdder = (
 ) => {
   const [ab, cab] = createHalfAdder(input1, input2);
   const [sum, s] = createHalfAdder(input3, ab);
-  const carry = createOrGate(cab, s, "Carry");
+  const carry = createOrGate(cab, s, "Real Carry");
   return [sum, carry];
 };

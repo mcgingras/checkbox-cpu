@@ -1,5 +1,5 @@
 import { JSDOM } from "jsdom";
-import { createMuxGate } from "../modules/gates/mux-gate";
+import { createMuxGate } from "../../modules/gates/mux-gate";
 import { describe, test, expect } from "vitest";
 import { fireEvent } from "@testing-library/dom";
 

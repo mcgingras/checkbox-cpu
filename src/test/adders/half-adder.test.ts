@@ -13,7 +13,7 @@ import { fireEvent } from "@testing-library/dom";
  * 1 | 1 | 1 | 1
  */
 
-describe("And gate", () => {
+describe("Half adder", () => {
   const setupTest = () => {
     const dom = new JSDOM('<!DOCTYPE html><div id="container"></div>');
     global.document = dom.window.document;
@@ -46,11 +46,11 @@ describe("And gate", () => {
     expect(carry.checked).toBe(false);
   });
 
-  test("1 + 1 should produce 1 sum 1 carry", () => {
+  test("1 + 1 should produce 0 sum 1 carry", () => {
     const { input1, input2, sum, carry } = setupTest();
     fireEvent.click(input1);
     fireEvent.click(input2);
-    expect(sum.checked).toBe(true);
+    expect(sum.checked).toBe(false);
     expect(carry.checked).toBe(true);
   });
 });

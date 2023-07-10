@@ -1,5 +1,5 @@
 import { JSDOM } from "jsdom";
-import { createOr8WayGate } from "../modules/gates/or8Way-gate";
+import { createOr8WayGate } from "../../modules/gates/or8Way-gate";
 import { describe, test, expect } from "vitest";
 import { fireEvent } from "@testing-library/dom";
 

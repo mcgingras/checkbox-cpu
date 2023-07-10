@@ -1,5 +1,5 @@
 import { JSDOM } from "jsdom";
-import { createXorGate } from "../modules/gates/xor-gate";
+import { createXorGate } from "../../modules/gates/xor-gate";
 import { describe, test, expect } from "vitest";
 import { fireEvent } from "@testing-library/dom";
 

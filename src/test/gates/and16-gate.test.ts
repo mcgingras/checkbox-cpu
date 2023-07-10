@@ -1,5 +1,5 @@
 import { JSDOM } from "jsdom";
-import { createAnd16Gate } from "../modules/gates/and16-gate";
+import { createAnd16Gate } from "../../modules/gates/and16-gate";
 import { describe, test, expect } from "vitest";
 import { fireEvent } from "@testing-library/dom";
 

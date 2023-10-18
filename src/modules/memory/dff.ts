@@ -5,7 +5,7 @@
  * @param input
  * @param clock
  * @param label
- * @returns output, output'
+ * @returns output, output
  *
  * Data Flip Flop
  */

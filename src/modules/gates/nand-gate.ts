@@ -1,3 +1,4 @@
+import { addCheckboxWithLabel } from "../utils/addCheckboxWithLabel";
 /**
  * @param input1
  * @param input2
@@ -46,4 +47,10 @@ export const createNandGate = (
       output.dispatchEvent(event);
     }
   }
+};
+
+export const initNandGate = () => {
+  const input1 = addCheckboxWithLabel("Input 1");
+  const input2 = addCheckboxWithLabel("Input 2");
+  createNandGate(input1, input2, "Output");
 };

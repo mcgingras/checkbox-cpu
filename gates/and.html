@@ -8,14 +8,12 @@
   </head>
   <body>
     <div id="app">
-      <div>
-        <h1>Gates</h1>
-        <div style="display: flex; flex-direction: column">
-          <a href="/gates/nand.html">nand gate</a>
-          <a href="/gates/and.html">and gate</a>
-        </div>
-      </div>
+      <a href="/">Home</a>
+      <h1>And Gate</h1>
     </div>
-    <!-- <script type="module" src="./src/main.ts"></script> -->
+    <script type="module">
+      import { initAndGate } from "../src/modules/gates/and-gate.ts";
+      initAndGate();
+    </script>
   </body>
 </html>

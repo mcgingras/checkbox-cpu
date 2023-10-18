@@ -1,4 +1,5 @@
 import { createNandGate } from "./nand-gate";
+import { addCheckboxWithLabel } from "../utils/addCheckboxWithLabel";
 
 /**
  * @param input1
@@ -25,4 +26,10 @@ export const createAndGate = (
   const b = createNandGate(input1, input2, "nand a,b");
 
   return createNandGate(a, b, label);
+};
+
+export const initAndGate = () => {
+  const input1 = addCheckboxWithLabel("Input 1");
+  const input2 = addCheckboxWithLabel("Input 2");
+  createAndGate(input1, input2, "Output");
 };

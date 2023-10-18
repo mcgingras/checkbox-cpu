@@ -1,4 +1,5 @@
 import { createNandGate } from "./nand-gate";
+import { addCheckboxWithLabel } from "../utils/addCheckboxWithLabel";
 
 /**
  * @param input1
@@ -30,8 +31,25 @@ export const createMuxGate = (
   label?: string
 ) => {
   return createNandGate(
-    createNandGate(input1, createNandGate(select, select)),
-    createNandGate(input2, select),
-    label
+    createNandGate(
+      input1,
+      createNandGate(select, select, "Nand(s,s)"),
+      "Nand(a,Nand(s,s))"
+    ),
+    createNandGate(input2, select, "Nand(b,s)"),
+    label,
+    true
+  );
+};
+
+export const initMuxGate = () => {
+  const input1 = addCheckboxWithLabel("Input A");
+  const input2 = addCheckboxWithLabel("Input B");
+  const select = addCheckboxWithLabel("Select");
+  createMuxGate(
+    input1,
+    input2,
+    select,
+    "Output (Nand(Nand(a,Nand(s,s)),Nand(b,s)))"
   );
 };

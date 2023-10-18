@@ -1,4 +1,6 @@
 import { addCheckboxWithLabel } from "../utils/addCheckboxWithLabel";
+
+const ENABLE_LABELS = false;
 /**
  * @param input1
  * @param input2
@@ -18,7 +20,8 @@ import { addCheckboxWithLabel } from "../utils/addCheckboxWithLabel";
 export const createNandGate = (
   input1: HTMLInputElement,
   input2: HTMLInputElement,
-  label?: string
+  label?: string,
+  isMainOutput = false
 ) => {
   var container = document.createElement("div");
   input1.addEventListener("change", updateOutput);
@@ -28,7 +31,7 @@ export const createNandGate = (
   output.type = "checkbox";
   output.disabled = true;
 
-  if (label) {
+  if ((ENABLE_LABELS && label) || isMainOutput) {
     container.appendChild(output);
     container.appendChild(document.createTextNode(label || ""));
     document.body.appendChild(container);
@@ -52,5 +55,5 @@ export const createNandGate = (
 export const initNandGate = () => {
   const input1 = addCheckboxWithLabel("Input 1");
   const input2 = addCheckboxWithLabel("Input 2");
-  createNandGate(input1, input2, "Output");
+  createNandGate(input1, input2, "Output", true);
 };

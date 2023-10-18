@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="stylesheet" href="../src/style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Checkbox CPU | Mux</title>
+  </head>
+  <body>
+    <div id="app">
+      <a href="/">Home</a>
+      <h1>Two bit mux</h1>
+      <p>A MUX gate is a three-input gate that uses one of the inputs, called the selector bit
+      to select one of the other two inputs, called data bits, and outputs only the selected data bit.</p>
+      <h2>Truth Table</h2>
+      <table>
+        <tr>
+          <th>Input A</th>
+          <th>Input B</th>
+          <th>Selector</th>
+          <th>Output</th>
+        </tr>
+        <tr>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+        </tr>
+        <tr>
+          <td>0</td>
+          <td>1</td>
+          <td>0</td>
+          <td>0</td>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>0</td>
+          <td>0</td>
+          <td>1</td>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>1</td>
+          <td>0</td>
+          <td>1</td>
+        </tr>
+        <tr>
+          <td>0</td>
+          <td>0</td>
+          <td>1</td>
+          <td>0</td>
+        </tr>
+        <tr>
+          <td>0</td>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>0</td>
+          <td>1</td>
+          <td>0</td>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+        </tr>
+    </div>
+    <script type="module">
+      import { initMuxGate } from "../src/modules/gates/mux-gate.ts";
+      initMuxGate();
+    </script>
+  </body>
+</html>

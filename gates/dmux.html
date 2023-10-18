@@ -5,43 +5,49 @@
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <link rel="stylesheet" href="../src/style.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Checkbox CPU | And</title>
+    <title>Checkbox CPU | Dmux</title>
   </head>
   <body>
     <div id="app">
       <a href="/">Home</a>
-      <h1>And Gate</h1>
+      <h1>Two bit dmux</h1>
+      <p>A demultiplexer performs the opposite function of a multiplexer: It takes a single input and channels it to one of two possible outputs according to a selector bit that specifies which output to choose.</p>
       <h2>Truth Table</h2>
       <table>
         <tr>
-          <th>Input A</th>
-          <th>Input B</th>
-          <th>Output</th>
+          <th>Input</th>
+          <th>Selector</th>
+          <th>Output Channel A</th>
+          <th>Output Channel B</th>
         </tr>
         <tr>
           <td>0</td>
           <td>0</td>
+          <td>0</td>
+          <td>0</td>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>0</td>
+          <td>1</td>
           <td>0</td>
         </tr>
         <tr>
           <td>0</td>
           <td>1</td>
           <td>0</td>
-        </tr>
-        <tr>
-          <td>1</td>
-          <td>0</td>
           <td>0</td>
         </tr>
         <tr>
           <td>1</td>
           <td>1</td>
+          <td>0</td>
           <td>1</td>
         </tr>
     </div>
     <script type="module">
-      import { initAndGate } from "../src/modules/gates/and-gate.ts";
-      initAndGate();
+      import { initDMuxGate } from "../src/modules/gates/dmux-gate.ts";
+      initDMuxGate();
     </script>
   </body>
 </html>

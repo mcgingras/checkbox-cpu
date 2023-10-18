@@ -22,14 +22,14 @@ export const createAndGate = (
   input2: HTMLInputElement,
   label?: string
 ) => {
-  const a = createNandGate(input1, input2, "nand a,b");
-  const b = createNandGate(input1, input2, "nand a,b");
+  const a = createNandGate(input1, input2, "Nand gate AB");
+  const b = createNandGate(input1, input2, "Nand gate AB");
 
   return createNandGate(a, b, label);
 };
 
 export const initAndGate = () => {
-  const input1 = addCheckboxWithLabel("Input 1");
-  const input2 = addCheckboxWithLabel("Input 2");
+  const input1 = addCheckboxWithLabel("Input A");
+  const input2 = addCheckboxWithLabel("Input B");
   createAndGate(input1, input2, "Output");
 };

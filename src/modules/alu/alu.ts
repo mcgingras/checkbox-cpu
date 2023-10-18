@@ -4,6 +4,8 @@ import { create16BitAdder } from "../adders/add-16";
 import { createAnd16Gate } from "../gates/and16-gate";
 import { createOr16WayGate } from "../gates/or16Way-gate";
 import { createNotGate } from "../gates/not-gate";
+// utils
+import { addCheckboxWithLabel } from "../utils/addCheckboxWithLabel";
 
 /**
  * @param input1
@@ -92,4 +94,36 @@ export const createALU = (
   const ng = oNegatedMux[15];
 
   return [oNegatedMux, zr, ng];
+};
+
+export const initALU = () => {
+  const zx = addCheckboxWithLabel("zx");
+  const nx = addCheckboxWithLabel("nx");
+  const zy = addCheckboxWithLabel("zy");
+  const ny = addCheckboxWithLabel("ny");
+  const f = addCheckboxWithLabel("f");
+  const no = addCheckboxWithLabel("no");
+
+  const inputs1 = [] as HTMLInputElement[];
+  const inputs2 = [] as HTMLInputElement[];
+
+  for (let i = 0; i < 16; i++) {
+    const input = document.createElement("input");
+    input.type = "checkbox";
+    inputs1.push(input);
+    document.body.appendChild(input);
+    document.body.appendChild(document.createTextNode("Input A " + i));
+    document.body.appendChild(document.createElement("br"));
+  }
+
+  for (let i = 0; i < 16; i++) {
+    const input = document.createElement("input");
+    input.type = "checkbox";
+    inputs2.push(input);
+    document.body.appendChild(input);
+    document.body.appendChild(document.createTextNode("Input B " + i));
+    document.body.appendChild(document.createElement("br"));
+  }
+
+  createALU(inputs1, inputs2, zx, nx, zy, ny, f, no);
 };

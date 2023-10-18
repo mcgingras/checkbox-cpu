@@ -24,6 +24,8 @@ describe("Or8Way gate", () => {
     const inputs = [] as HTMLInputElement[];
     for (let i = 0; i < 8; i++) {
       let input = document.createElement("input");
+      input.type = "checkbox";
+      input.checked = false;
       container.appendChild(input);
       inputs.push(input);
     }

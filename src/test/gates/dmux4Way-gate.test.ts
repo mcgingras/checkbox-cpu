@@ -17,11 +17,15 @@ describe("DMux4Way16 gate", () => {
     const container = document.getElementById("container") as HTMLDivElement;
 
     let input = document.createElement("input");
+    input.type = "checkbox";
+    input.checked = false;
     container.appendChild(input);
 
     const select = [] as HTMLInputElement[];
     for (let i = 0; i < 2; i++) {
       let input = document.createElement("input");
+      input.type = "checkbox";
+      input.checked = false;
       container.appendChild(input);
       select.push(input);
     }

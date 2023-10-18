@@ -16,6 +16,8 @@ describe("Not gate", () => {
     const dom = new JSDOM('<!DOCTYPE html><div id="container"></div>');
     global.document = dom.window.document;
     let input = document.createElement("input");
+    input.type = "checkbox";
+    input.checked = false;
     const container = document.getElementById("container") as HTMLDivElement;
     container.appendChild(input);
     let output = createNotGate(input);

@@ -43,6 +43,8 @@ describe("Or16 gate", () => {
     const inputs1 = [] as HTMLInputElement[];
     for (let i = 0; i < 16; i++) {
       let input = document.createElement("input");
+      input.type = "checkbox";
+      input.checked = false;
       container.appendChild(input);
       inputs1.push(input);
     }
@@ -50,6 +52,8 @@ describe("Or16 gate", () => {
     const inputs2 = [] as HTMLInputElement[];
     for (let i = 0; i < 16; i++) {
       let input = document.createElement("input");
+      input.type = "checkbox";
+      input.checked = false;
       container.appendChild(input);
       inputs2.push(input);
     }

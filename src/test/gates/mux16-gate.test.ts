@@ -24,6 +24,8 @@ describe("Mux16 gate", () => {
     const inputs1 = [] as HTMLInputElement[];
     for (let i = 0; i < 16; i++) {
       let input = document.createElement("input");
+      input.type = "checkbox";
+      input.checked = false;
       container.appendChild(input);
       inputs1.push(input);
     }
@@ -31,11 +33,15 @@ describe("Mux16 gate", () => {
     const inputs2 = [] as HTMLInputElement[];
     for (let i = 0; i < 16; i++) {
       let input = document.createElement("input");
+      input.type = "checkbox";
+      input.checked = false;
       container.appendChild(input);
       inputs2.push(input);
     }
 
     const select = document.createElement("input");
+    select.type = "checkbox";
+    select.checked = false;
     container.appendChild(select);
 
     let output = createMux16Gate(inputs1, inputs2, select);

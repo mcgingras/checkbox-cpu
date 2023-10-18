@@ -17,7 +17,11 @@ describe("Nand gate", () => {
     const dom = new JSDOM('<!DOCTYPE html><div id="container"></div>');
     global.document = dom.window.document;
     let input1 = document.createElement("input");
+    input1.type = "checkbox";
+    input1.checked = false;
     let input2 = document.createElement("input");
+    input2.type = "checkbox";
+    input2.checked = false;
     const container = document.getElementById("container") as HTMLDivElement;
     container.appendChild(input1);
     container.appendChild(input2);

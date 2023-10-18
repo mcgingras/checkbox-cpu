@@ -31,6 +31,8 @@ describe("Mux4Way16 gate", () => {
     const inputs1 = [] as HTMLInputElement[];
     for (let i = 0; i < 16; i++) {
       let input = document.createElement("input");
+      input.type = "checkbox";
+      input.checked = false;
       container.appendChild(input);
       inputs1.push(input);
     }
@@ -38,6 +40,8 @@ describe("Mux4Way16 gate", () => {
     const inputs2 = [] as HTMLInputElement[];
     for (let i = 0; i < 16; i++) {
       let input = document.createElement("input");
+      input.type = "checkbox";
+      input.checked = false;
       container.appendChild(input);
       inputs2.push(input);
     }
@@ -45,6 +49,8 @@ describe("Mux4Way16 gate", () => {
     const inputs3 = [] as HTMLInputElement[];
     for (let i = 0; i < 16; i++) {
       let input = document.createElement("input");
+      input.type = "checkbox";
+      input.checked = false;
       container.appendChild(input);
       inputs3.push(input);
     }
@@ -52,6 +58,8 @@ describe("Mux4Way16 gate", () => {
     const inputs4 = [] as HTMLInputElement[];
     for (let i = 0; i < 16; i++) {
       let input = document.createElement("input");
+      input.type = "checkbox";
+      input.checked = false;
       container.appendChild(input);
       inputs4.push(input);
     }
@@ -59,6 +67,8 @@ describe("Mux4Way16 gate", () => {
     const inputs5 = [] as HTMLInputElement[];
     for (let i = 0; i < 16; i++) {
       let input = document.createElement("input");
+      input.type = "checkbox";
+      input.checked = false;
       container.appendChild(input);
       inputs5.push(input);
     }
@@ -66,6 +76,8 @@ describe("Mux4Way16 gate", () => {
     const inputs6 = [] as HTMLInputElement[];
     for (let i = 0; i < 16; i++) {
       let input = document.createElement("input");
+      input.type = "checkbox";
+      input.checked = false;
       container.appendChild(input);
       inputs6.push(input);
     }
@@ -73,6 +85,8 @@ describe("Mux4Way16 gate", () => {
     const inputs7 = [] as HTMLInputElement[];
     for (let i = 0; i < 16; i++) {
       let input = document.createElement("input");
+      input.type = "checkbox";
+      input.checked = false;
       container.appendChild(input);
       inputs7.push(input);
     }
@@ -80,6 +94,8 @@ describe("Mux4Way16 gate", () => {
     const inputs8 = [] as HTMLInputElement[];
     for (let i = 0; i < 16; i++) {
       let input = document.createElement("input");
+      input.type = "checkbox";
+      input.checked = false;
       container.appendChild(input);
       inputs8.push(input);
     }
@@ -89,6 +105,12 @@ describe("Mux4Way16 gate", () => {
       document.createElement("input"),
       document.createElement("input"),
     ];
+    select[0].type = "checkbox";
+    select[0].checked = false;
+    select[1].type = "checkbox";
+    select[1].checked = false;
+    select[2].type = "checkbox";
+    select[2].checked = false;
     container.appendChild(select[0]);
     container.appendChild(select[1]);
     container.appendChild(select[2]);

@@ -32,9 +32,11 @@ export const createNandGate = (
   output.disabled = true;
 
   if ((ENABLE_LABELS && label) || isMainOutput) {
+    const app = document.getElementById("app") as HTMLDivElement;
+    const renderTarget = app ?? document.body;
     container.appendChild(output);
     container.appendChild(document.createTextNode(label || ""));
-    document.body.appendChild(container);
+    renderTarget.appendChild(container);
   }
 
   updateOutput();

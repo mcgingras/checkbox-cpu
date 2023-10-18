@@ -10,6 +10,22 @@
   -webkit-text-size-adjust: 100%;
 }
 
+body {
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  margin-top: 0;
+}
+
+.main {
+  max-width: 960px;
+  padding: 2rem;
+}
+
 table {
   border-collapse: collapse;
   border-spacing: 0;

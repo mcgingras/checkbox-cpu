@@ -1,8 +1,14 @@
 export const addCheckboxWithLabel = (label: string) => {
   const input = document.createElement("input");
   input.type = "checkbox";
-  document.body.appendChild(input);
-  document.body.appendChild(document.createTextNode(label));
-  document.body.appendChild(document.createElement("br"));
+  input.checked = false;
+
+  const app = document.getElementById("app") as HTMLDivElement;
+  const renderTarget = app ?? document.body;
+
+  renderTarget.appendChild(input);
+  renderTarget.appendChild(document.createTextNode(label));
+  renderTarget.appendChild(document.createElement("br"));
+
   return input;
 };
